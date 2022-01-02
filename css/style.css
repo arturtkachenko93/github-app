@@ -37,6 +37,7 @@ form input {
 }
 
 .output-res {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-size: 18px;
@@ -46,7 +47,9 @@ form input {
   margin-bottom: 5px;
 }
 
-
-
-
-
+.close {
+  position: absolute;
+  right: 10px;
+  font-size: 50px;
+  cursor: pointer;
+}

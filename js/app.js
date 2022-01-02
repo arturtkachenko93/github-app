@@ -40,12 +40,20 @@ function requestRepositories(e) {
           const res = data.items.find(item => item.id === +el.dataset.attr);
           formWrapper.insertAdjacentHTML('beforeend', `<div class='output-res'>
           <span>Name: ${res.name}</span>
+          <span class='close'>X</span>
           <span>Owner: ${res.owner.login}</span>
           <span>Stars: ${res.stargazers_count}</span>`);
           formInput.value = '';
-
         })
-      });
+      })
+    })
+    .then(() => {
+      formWrapper.addEventListener('click', (e) => {
+        if (e.target.className != 'close') return;
+
+        let out = e.target.closest('.output-res');
+        out.remove();
+      })
     })
     .catch(e => {
       formWrapper.insertAdjacentHTML('beforeend', `<span>${e}</span>`);
