@@ -18,9 +18,11 @@ form input {
   padding: 5px;
 }
 
-.form-wrapper {
+.form-wrapper,
+.res-wrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .output-link {
