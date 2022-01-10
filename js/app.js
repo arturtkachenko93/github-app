@@ -56,15 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
         formWrapper.addEventListener('click', clickOutput);
       })
       .then(() => {
+
         // hundler по нажатию кнопки "закрыть" по репозиторию
         const removeRes = (e) => {
+
           if (e.target.className != 'close') return;
 
           let out = e.target.closest('.output-res');
           out.remove();
+
           // удаление обработчика событий кнопки "закрыть"
-          if (btnsClose.length === 0) {
-            resWrapper.removeEventListener('click', removeRes)
+          if (resWrapper.children.length === 0) {
+            resWrapper.removeEventListener('click', removeRes);
           }
         }
 
